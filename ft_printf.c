@@ -6,7 +6,7 @@
 /*   By: nye-eun- <nye-eun-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 21:18:37 by nye-eun-          #+#    #+#             */
-/*   Updated: 2022/11/01 22:59:53 by nye-eun-         ###   ########.fr       */
+/*   Updated: 2022/11/03 21:32:13 by nye-eun-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,7 @@ int	ft_printf(const char *format, ...)
 {
 	va_list	args;
 	int		printed;
-	int		i;
 
-	i = 0;
 	printed = 0;
 	va_start(args, format);
 	while (*format)

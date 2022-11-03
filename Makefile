@@ -1,5 +1,6 @@
 NAME = libftprintf.a
 
+
 SRCS = ft_printf.c print_char.c print_hex.c print_signed_int.c print_string.c print_unsigned_int.c print_pointer.c
 OBJS = $(patsubst %.c, %.o, $(SRCS))
 
@@ -44,14 +45,13 @@ CFLAGS = -Wall -Werror -Wextra
 
 all: $(NAME)
 
-$(NAME): $(OBJS) $(LIBFT)
+$(NAME): $(OBJS) 
+	make -C ./libft/
+	mv ./libft/libft.a $(NAME)
 	ar rcs -o $(NAME) $(OBJS) $(OBJSLIBFT)
 
 $(OBJS):
 	cc $(CFLAGS) -c $(SRCS)
-
-$(LIBFT):
-	make -C ./libft/
 
 clean:
 	rm -rf $(OBJS)
